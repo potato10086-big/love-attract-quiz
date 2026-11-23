@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFF8F4">
+<title>你容易吸引什么恋人｜12 种引力体质测评</title>
+<style>
+:root{
+  --cream:#FFF8F4;
+  --pink:#F7C7D2;
+  --pink-soft:#FDE9EE;
+  --rose:#D4697F;
+  --rose-deep:#B7485F;
+  --ink:#5A4150;
+  --ink-soft:#8A6B78;
+  --line:#F2DEE4;
+  --white:#FFFDFC;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(120% 60% at 50% 0%, #FFEFF2 0%, rgba(255,239,242,0) 60%),
+    linear-gradient(180deg,#FFF8F4 0%, #FDF2F4 100%);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+main{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative;overflow-x:hidden}
+.view{display:none;flex:1;flex-direction:column;position:relative;z-index:1}
+.view.active{display:flex}
+
+/* 手绘小花装饰 */
+.bloom{position:absolute;pointer-events:none;z-index:0;opacity:.9}
+.bloom svg{display:block}
+
+/* ---------- 首页 ---------- */
+#home{justify-content:center;padding:0 24px;text-align:center}
+.home-inner{width:min(100%,520px);margin:0 auto;padding:40px 0 56px;position:relative}
+.deco-top{display:flex;justify-content:center;margin-bottom:22px}
+.kicker{
+  display:inline-block;font-size:12px;letter-spacing:.16em;color:var(--rose);
+  margin:0 0 20px;font-weight:600;background:var(--pink-soft);
+  padding:6px 14px;border-radius:999px;
+}
+h1{
+  margin:0;font-family:"Songti SC","STSong","SimSun",Georgia,serif;
+  font-size:clamp(38px,10.6vw,58px);line-height:1.24;font-weight:700;letter-spacing:.01em;
+  color:var(--ink);
+}
+h1 em{font-style:normal;color:var(--rose);position:relative}
+h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:2px;height:8px;
+  background:var(--pink-soft);border-radius:6px;z-index:-1;
+}
+.sub{margin:20px auto 34px;color:var(--ink-soft);font-size:15.5px;max-width:24em}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:0 34px;border-radius:999px;border:1px solid transparent;
+  font-size:17px;font-weight:600;font-family:inherit;cursor:pointer;
+  transition:transform .12s ease,box-shadow .12s ease,background-color .12s ease,color .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn.primary{
+  background:linear-gradient(135deg,#E98AA0 0%, #D4697F 100%);color:#fff;
+  box-shadow:0 10px 24px -10px rgba(212,105,127,.75);
+}
+.btn.primary:hover{box-shadow:0 12px 28px -10px rgba(212,105,127,.85)}
+.btn.ghost{background:#fff;color:var(--rose-deep);border-color:var(--pink)}
+.hint{margin:18px 0 0;font-size:12.5px;color:var(--ink-soft);opacity:.85}
+
+/* ---------- 答题 ---------- */
+#quiz{padding:0 0 40px}
+.quiz-top{
+  position:sticky;top:0;z-index:5;
+  background:rgba(255,248,244,.94);backdrop-filter:blur(8px);
+  padding:16px 22px 10px;border-bottom:1px solid var(--line);
+}
+.bar{height:5px;background:#F6E2E8;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#F0A6B8,#D4697F);border-radius:99px;transition:width .3s ease}
+.meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:8px;font-size:13px;color:var(--ink-soft);
+}
+.link{
+  background:none;border:none;padding:8px 2px;font:inherit;color:var(--ink-soft);
+  cursor:pointer;min-height:44px;min-width:44px;text-align:right;
+}
+.link:hover{color:var(--rose)}
+.q-wrap{width:min(100%,620px);margin:0 auto;padding:34px 22px 24px}
+.q-wrap.enter{animation:slide .3s ease-out}
+@keyframes slide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.q-text{
+  font-size:clamp(21px,5.4vw,26px);line-height:1.55;margin:0 0 26px;font-weight:700;
+  font-family:"Songti SC","STSong","SimSun",Georgia,serif;letter-spacing:.01em;
+}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{
+  display:block;width:100%;text-align:left;padding:16px 18px;min-height:56px;
+  background:var(--white);border:1px solid var(--line);border-radius:16px;
+  font-size:16px;font-family:inherit;color:var(--ink);cursor:pointer;line-height:1.5;
+  transition:transform .12s ease,border-color .12s ease,background-color .12s ease,box-shadow .12s ease;
+}
+.opt:hover{border-color:var(--pink);box-shadow:0 6px 16px -12px rgba(212,105,127,.6)}
+.opt:active{transform:scale(.985)}
+.opt[aria-pressed="true"]{
+  border-color:var(--rose);background:var(--pink-soft);font-weight:600;
+  box-shadow:0 0 0 2px rgba(212,105,127,.16) inset;
+}
+.opt[aria-pressed="true"]::after{content:"♥";float:right;color:var(--rose);font-size:15px;line-height:1.5}
+.opt:focus-visible,.btn:focus-visible,.link:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* ---------- 揭晓页（仪式感） ---------- */
+#finish{justify-content:center;text-align:center;padding:0 24px}
+.finish-inner{width:min(100%,480px);margin:0 auto;padding:40px 0 56px}
+.seal{display:flex;justify-content:center;margin-bottom:26px}
+.seal svg{animation:float 3.2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.finish-inner h2{
+  margin:0 0 10px;font-family:"Songti SC","STSong","SimSun",Georgia,serif;
+  font-size:clamp(30px,8.6vw,42px);line-height:1.3;font-weight:700;color:var(--ink);
+}
+.finish-inner .kicker{margin-bottom:20px}
+.finish-inner .sub{margin:14px auto 34px}
+.btn.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{
+  0%,100%{box-shadow:0 10px 24px -10px rgba(212,105,127,.75),0 0 0 0 rgba(212,105,127,.28)}
+  50%{box-shadow:0 10px 24px -10px rgba(212,105,127,.75),0 0 0 12px rgba(212,105,127,0)}
+}
+
+/* ---------- 结果 ---------- */
+#result{padding:26px 18px calc(40px + env(safe-area-inset-bottom))}
+.r-wrap{width:min(100%,440px);margin:0 auto;display:flex;flex-direction:column;gap:16px}
+
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:22px;
+  padding:28px 24px;box-shadow:0 18px 40px -32px rgba(90,65,80,.35);
+}
+.hero{text-align:center;padding-bottom:22px}
+.hero .kicker{margin-bottom:14px}
+.r-name{
+  margin:4px 0 6px;font-family:"Songti SC","STSong","SimSun",Georgia,serif;
+  font-size:clamp(32px,9vw,40px);font-weight:700;color:var(--rose-deep);letter-spacing:.02em;
+}
+.r-tag{margin:0;color:var(--ink-soft);font-size:15px}
+.shadow{margin:10px 0 0;font-size:12.5px;color:var(--rose);opacity:.85}
+
+/* 六边形雷达 */
+.radar-card{padding:18px 12px 6px}
+.radar-title{display:flex;align-items:baseline;justify-content:space-between;padding:0 10px;margin-bottom:2px}
+.radar-title span{font-size:12px;letter-spacing:.14em;color:var(--ink-soft)}
+.radar-box{display:flex;justify-content:center}
+.radar-box svg{width:100%;max-width:340px;height:auto;display:block}
+
+/* 文案分段 */
+.story{padding:6px 24px 10px}
+.story-item{padding:18px 0;border-top:1px dashed var(--line)}
+.story-item:first-child{border-top:0;padding-top:8px}
+.story h3{
+  margin:0 0 8px;font-size:12.5px;letter-spacing:.14em;color:var(--rose);font-weight:600;
+}
+.story p{margin:0;font-size:15.5px;line-height:1.85;color:#6B5360}
+
+/* 分享卡 */
+.share-card{padding:22px 24px}
+.share-label{font-size:12px;letter-spacing:.14em;color:var(--ink-soft);margin:0 0 10px}
+.share-text{
+  margin:0 0 16px;padding:14px 16px;border:1px dashed #EBC4CE;border-radius:14px;
+  background:#FFF4F6;font-size:15px;line-height:1.75;color:var(--ink);
+}
+.share-card .btn{width:100%}
+
+.watermark{margin:6px 0 0;text-align:center;font-size:11px;letter-spacing:.16em;color:#C9AEB8}
+.disclaimer{text-align:center;font-size:12px;color:var(--ink-soft);margin:6px 0 0;opacity:.8}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="bloom" style="top:-30px;left:-26px;transform:rotate(-16deg)">
+    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+      <g stroke="#E7A9B8" stroke-width="2" fill="#FFF">
+        <ellipse cx="60" cy="36" rx="15" ry="20"/><ellipse cx="84" cy="52" rx="15" ry="20" transform="rotate(72 84 52)"/>
+        <ellipse cx="75" cy="79" rx="15" ry="20" transform="rotate(144 75 79)"/><ellipse cx="45" cy="79" rx="15" ry="20" transform="rotate(216 45 79)"/>
+        <ellipse cx="36" cy="52" rx="15" ry="20" transform="rotate(288 36 52)"/>
+      </g>
+      <circle cx="60" cy="60" r="13" fill="#F9D48B" stroke="#E7A9B8" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="bloom" style="bottom:40px;right:-30px;transform:rotate(18deg)">
+    <svg width="140" height="140" viewBox="0 0 120 120" fill="none">
+      <g stroke="#E7A9B8" stroke-width="2" fill="#FFF">
+        <ellipse cx="60" cy="34" rx="14" ry="19"/><ellipse cx="85" cy="51" rx="14" ry="19" transform="rotate(72 85 51)"/>
+        <ellipse cx="76" cy="80" rx="14" ry="19" transform="rotate(144 76 80)"/><ellipse cx="44" cy="80" rx="14" ry="19" transform="rotate(216 44 80)"/>
+        <ellipse cx="35" cy="51" rx="14" ry="19" transform="rotate(288 35 51)"/>
+      </g>
+      <circle cx="60" cy="58" r="12" fill="#F5CBD5" stroke="#E7A9B8" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="bloom" style="top:18%;right:6%;opacity:.8">
+    <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+      <path d="M23 6 L26.4 17 L38 17 L28.8 23.8 L32.2 35 L23 28.2 L13.8 35 L17.2 23.8 L8 17 L19.6 17 Z"
+            fill="#FBD9A5" stroke="#E7A9B8" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <!-- 首页 -->
+  <section id="home" class="view active">
+    <div class="home-inner">
+      <p class="kicker">趣味测评 · 12 种引力体质</p>
+      <h1>你容易<br>吸引<em>什么恋人</em></h1>
+      <p class="sub">40 道生活小题。看看你身上是哪种引力，会吸引哪一类人靠近——不是算命，是照一面镜子。</p>
+      <button id="startBtn" class="btn primary">开始测试 ♡</button>
+      <p class="hint">约 3 分钟 · 不收集任何信息 · 答完直接出结果</p>
+    </div>
+  </section>
+
+  <!-- 答题 -->
+  <section id="quiz" class="view">
+    <div class="quiz-top">
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="meta">
+        <span id="qCount" aria-live="polite">第 1 / 40 题</span>
+        <button id="backBtn" class="link">上一题</button>
+      </div>
+    </div>
+    <div class="q-wrap" id="qWrap">
+      <h2 class="q-text" id="qText"></h2>
+      <div class="opts" id="opts" role="group" aria-label="选项"></div>
+    </div>
+  </section>
+
+  <!-- 揭晓（仪式感） -->
+  <section id="finish" class="view">
+    <div class="finish-inner">
+      <div class="seal">
+        <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
+          <path d="M43 74 C20 58 8 46 8 31 C8 19 17 12 27 12 C34 12 40 16 43 22 C46 16 52 12 59 12 C69 12 78 19 78 31 C78 46 66 58 43 74 Z"
+                fill="#FDE9EE" stroke="#D4697F" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M30 38 C33 33 39 30 44 32 C49 30 55 33 58 38" stroke="#D4697F" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/>
+        </svg>
+      </div>
+      <p class="kicker">40 题全部答完啦</p>
+      <h2>你的引力<br>已经翻出来了</h2>
+      <p class="sub">答案就在这张卡片里，准备好了再点开它。</p>
+      <button id="revealBtn" class="btn primary pulse">点击查看你吸引的恋人</button>
+      <p class="hint">结果卡可以整张截图，直接发出去</p>
+    </div>
+  </section>
+
+  <!-- 结果 -->
+  <section id="result" class="view">
+    <div class="r-wrap">
+      <div class="card hero">
+        <p class="kicker">你的引人体质</p>
+        <h2 class="r-name" id="rName"></h2>
+        <p class="r-tag" id="rTag"></p>
+        <p class="shadow" id="rShadow" hidden></p>
+      </div>
+
+      <div class="card radar-card">
+        <div class="radar-title"><span>你的引力指数</span><span>0—100</span></div>
+        <div class="radar-box" id="radar"></div>
+      </div>
+
+      <div class="card story">
+        <div class="story-item"><h3>为什么是你</h3><p id="rWhy"></p></div>
+        <div class="story-item"><h3>你会吸引谁</h3><p id="rWho"></p></div>
+        <div class="story-item"><h3>你的隐藏魅力</h3><p id="rHidden"></p></div>
+      </div>
+
+      <div class="card share-card">
+        <p class="share-label">直接发出去</p>
+        <p class="share-text" id="rShare"></p>
+        <button id="copyBtn" class="btn primary">复制分享句</button>
+      </div>
+
+      <p class="watermark">测一测 · 你容易吸引什么恋人</p>
+      <button id="againBtn" class="btn ghost">重新测试</button>
+      <p class="disclaimer">趣味测评 · 不构成心理诊断 · 仅供娱乐</p>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ===== 题库：40 题 =====
+   每题 4 个选项，顺序固定：
+     A = 热度 H（把气氛点燃）
+     B = 亲密 C（把人接住）
+     C = 独立 I（按自己的节奏）
+     D = 表达 E（把话说清楚）
+   得分规则：选中项主维 +2，下一个维度 +1（H→C→I→E→H，循环）。
+*/
+const QUESTIONS = [
+["周五晚上突然空出两小时，你更想",
+  "立刻叫人出门，吃点什么逛逛",
+  "给最近累的人做顿饭",
+  "一个人待着，不发消息",
+  "把心里那点事找人说清楚"],
+
+["微信群里有人发了条消息没人接，你会",
+  "顺手接一句，把场子救回来",
+  "私下问问对方怎么了",
+  "看一眼，不插话",
+  "直接把话题说清楚，别扭着"],
+
+["朋友说你「最近好像不太一样」，你",
+  "哈哈一笑带过去",
+  "反问：你是不是最近太累了",
+  "嗯，可能吧",
+  "你说具体点"],
+
+["你更喜欢哪种相处",
+  "一群人热热闹闹",
+  "两三个人慢慢处",
+  "各忙各的，偶尔抬头",
+  "有话直说，不绕弯子"],
+
+["被人当众夸了一句，你会",
+  "顺着玩笑接下去",
+  "赶紧回夸对方",
+  "有点不好意思，含糊过去",
+  "大大方方说谢谢"],
+
+["深夜朋友发来一句「在吗」，你",
+  "直接打电话过去",
+  "秒回：怎么了",
+  "先看时间再回",
+  "回一个字：说"],
+
+["计划好的出游下雨了",
+  "淋着雨也要出去玩",
+  "改去咖啡馆聊一下午",
+  "窝着看窗外",
+  "重新商量去哪"],
+
+["认识新朋友，你最先看",
+  "这人有没有意思",
+  "这人靠不靠谱",
+  "气场对不对",
+  "能不能聊得来"],
+
+["一个人待久了，你会",
+  "想找人疯一场",
+  "想找人吃顿饭",
+  "反而更自在",
+  "想找人把话说完"],
+
+["你觉得「被爱」更接近",
+  "有人愿意陪你疯",
+  "有人总想着你",
+  "有人给你空间",
+  "有人听得懂你"],
+
+["说出「我其实有点脆弱」对你来说",
+  "用开玩笑的方式说",
+  "只跟特定的人说",
+  "很难说出口",
+  "直说，没什么不能讲"],
+
+["手机相册里最多的是",
+  "热闹的合照",
+  "别人分享给你的东西",
+  "风景和角落",
+  "自己拍的搞怪截图"],
+
+["吵完架之后，你通常",
+  "睡一觉就翻篇",
+  "先给对方台阶",
+  "自己静一静",
+  "主动把话说开"],
+
+["对「撒娇」这件事",
+  "觉得挺好玩的",
+  "只对特别亲近的人",
+  "不太会",
+  "想撒就撒"],
+
+["你的能量补给是",
+  "和朋友大笑一场",
+  "被人需要",
+  "一个人发呆",
+  "把心里话说出来"],
+
+["朋友问你「他／她到底喜不喜欢我」",
+  "怂恿你去问",
+  "先问你自己的感觉",
+  "说我也不确定",
+  "帮你一条条分析"],
+
+["你更希望被形容为",
+  "有意思",
+  "很温暖",
+  "有分寸",
+  "很坦诚"],
+
+["遇到喜欢的人，你",
+  "主动靠近",
+  "慢慢渗进对方的生活",
+  "先观察一阵",
+  "找机会把话说开"],
+
+["你的社交电量",
+  "充得快，用得也快",
+  "慢慢充，比较耐用",
+  "只对少数人敞开",
+  "想聊就能聊很久"],
+
+["你更想听到哪句告白",
+  "跟你在一起每天都好玩",
+  "有你在我就安心",
+  "你不用为谁改变",
+  "我们聊到天亮吧"],
+
+["朋友失恋了来找你，你第一句话是",
+  "走，陪你喝酒去",
+  "我在，你随时说",
+  "递张纸巾，安静待着",
+  "先说说怎么回事"],
+
+["你理想的独居状态是",
+  "经常有朋友来串门",
+  "有人一起住，安静点也行",
+  "完全自己说了算",
+  "随时能约人出门聊"],
+
+["你最容易因为什么心动",
+  "对方笑起来很好看",
+  "对方记得你说过的小事",
+  "对方不粘人，很自在",
+  "对方说话有意思"],
+
+["你更讨厌",
+  "无聊",
+  "被冷落",
+  "被管着",
+  "有话不说"],
+
+["在人群里你一般是",
+  "跟着一起闹",
+  "照顾大家的那个",
+  "待在边上观察",
+  "发起话题的那个"],
+
+["心情不好时你会",
+  "出门找点新鲜事",
+  "要人陪着，不说话也行",
+  "一个人消化",
+  "找人说出来"],
+
+["你希望恋爱里",
+  "仪式感拉满",
+  "日常细水长流",
+  "各自精彩",
+  "有话直说"],
+
+["朋友聚会时你更容易成为",
+  "气氛组担当",
+  "帮大家张罗的那个",
+  "到点就走的那种",
+  "提议去哪玩的人"],
+
+["你相信「一眼心动」吗",
+  "信，第一眼就决定",
+  "不信，好感是处出来的",
+  "看感觉吧",
+  "信，但先不说"],
+
+["收到礼物时，你更开心的是",
+  "惊喜到尖叫的那种",
+  "对方记得我提过的东西",
+  "实用的",
+  "有故事的"],
+
+["你觉得一个人最好的状态是",
+  "热闹地活着",
+  "有人爱着",
+  "自给自足",
+  "有话可说"],
+
+["你更常做的是",
+  "经常发好玩的",
+  "回复很慢但很认真",
+  "等对方先说",
+  "主动发消息"],
+
+["旅行时你",
+  "随时改计划",
+  "跟着人走",
+  "一个人乱逛",
+  "行程排满"],
+
+["你被说过「太高冷」吗",
+  "没有，我一直挺热情",
+  "偶尔，熟了就好",
+  "是有点",
+  "常有，其实我话挺多"],
+
+["别人难过时，你的第一反应是",
+  "讲个笑话逗一下",
+  "抱住他／她",
+  "递纸巾，安静待着",
+  "帮他分析怎么办"],
+
+["你想要的关系是",
+  "每天一起闹",
+  "互相依靠",
+  "各自独立又亲近",
+  "有话说不完"],
+
+["你更愿意被人记住",
+  "有趣",
+  "温柔",
+  "特别",
+  "坦诚"],
+
+["熬夜的时候你在",
+  "出去嗨",
+  "刷喜欢的人动态",
+  "一个人看片子",
+  "跟人聊天"],
+
+["面对不熟的人的夸奖，你会",
+  "兴奋地分享给朋友",
+  "笑着回夸",
+  "有点慌，赶紧转移话题",
+  "大方收下"],
+
+["如果恋爱是一场游戏，你更想玩",
+  "竞技场对决",
+  "双人合作闯关",
+  "自由探索地图",
+  "剧情长线那种"],
+];
+
+/* ===== 结果：12 种引力体质 =====
+   匹配方式：四维得分排序，取「主导维 + 次导维」两组，查映射表得到类型。
+   例如主导 H（热度）、次导 C（亲密）→ 篝火引力。12 种组合正好对应 12 种引力。
+*/
+const RESULTS = [
+{
+  id: "huoguo",
+  name: "篝火引力",
+  tag: "热得快，也把人烘暖",
+  why: "你是那种一进门就让房间温度变高的人。点菜先问别人想吃什么，冷场了先抛个梗，谁缩在角落你会顺手把话递过去。你不一定是话最多的，但一定是让大家能松下来的那个。",
+  who: "你会吸引那种在外面绷了一天、回家只想找个人把气放出来的人。他们喜欢你身上那股「什么事都不算大事」的劲。跟你在一起最舒服的瞬间，是妆卸了、眼镜摘了、一句话都不想说的时候，你还在那儿。",
+  hidden: "你的小怪癖是嘴上说「我不在乎」，转头把每个人的口味记得一清二楚。",
+  share: "我测出来是【篝火引力】：天塌下来我先笑，再带你去吃顿热的。"
+},
+{
+  id: "yanxi",
+  name: "盐系引力",
+  tag: "安静不抢话，但每句都踩在点上",
+  why: "你不爱在人群里刷存在感，可你开口的时候，大家会安静一下。你不发长篇大论，一句「他那天其实挺难受的」就能把气氛说清楚。你是那种越处越舒服的人，第一眼不惊艳，第七天上头。",
+  who: "你会吸引同样不爱吵的人，还有那些被话多的人累过的人。他们发现跟你待着不用一直找话、不用表演，一个下午没说几句却很满。最舒服的瞬间是两个人各看各的，突然同时开口，说的还是同一件事。",
+  hidden: "你的小怪癖是表面无所谓，其实谁跟谁什么关系你门儿清。",
+  share: "我测出来是【盐系引力】：不吵不闹，但我说话很耐听。"
+},
+{
+  id: "jiushudian",
+  name: "旧书店引力",
+  tag: "慢热，故事多，得有人肯翻页",
+  why: "你不是第一眼就开门的人。你先看对方怎么对人、怎么处理麻烦，才决定要不要把人放进你的世界。你的生活有自己的顺序：书怎么摆、杯子怎么放、周末几点起，都是你亲手排的。所以被接纳的人会有一种「我是被选中的」感觉。",
+  who: "你会吸引有耐心的人，和那种特别会观察的人。他们不怕你慢，反而觉得你有内容；他们喜欢你一开口就讲出别人不知道的事。最舒服的瞬间，是对方翻到你的第 37 页，突然笑出声。",
+  hidden: "你的小怪癖是话少，但记得你三年前随口说过的那句话。",
+  share: "我测出来是【旧书店引力】：得有人肯翻页，才看得到我的目录。"
+},
+{
+  id: "bingqishui",
+  name: "冰汽水引力",
+  tag: "直球清爽，不绕弯子",
+  why: "你讨厌「你猜我在想什么」的拉扯。喜欢就靠近，不高兴就说出来，说完就翻篇。你身上有一种让人松口气的清爽，别人跟你相处不用猜、不用小心翼翼。你以为自己太直，其实很多人偷偷羡慕你不用内耗。",
+  who: "你会吸引厌恶猜心的人，和那些憋久了的人。他们喜欢你一句话把事儿说清，喜欢你吵架不记仇、道歉不扭捏。最舒服的瞬间，是你一句「那就这么定了」，把所有纠结都拍平。",
+  hidden: "你的小怪癖是嘴上句句狠话，实际每次记得提醒对方带伞。",
+  share: "我测出来是【冰汽水引力】：第一口有点刺，第二口就上头。"
+},
+{
+  id: "yuexiang",
+  name: "月相引力",
+  tag: "忽近忽远，让人忍不住一直看",
+  why: "你的情绪有潮汐。想靠近的时候热得不得了，想独处的时候连消息都懒得回。这种忽近忽远不是吊着谁，是你的电量本来就这么设计。你有趣，也有自己的一套审美，偶尔消失一下，回来时又带着新东西。",
+  who: "你会吸引好奇心重的人，和喜欢解谜的人。他们被「好像还有没看过的另一面」勾住，愿意等你的下一轮月圆。最舒服的瞬间，是你突然想黏人了，一整个晚上抱着人不撒手。",
+  hidden: "你的小怪癖是嘴上说「随便」，心里早有一套完整方案。",
+  share: "我测出来是【月相引力】：我很少有刚刚好，但你会想等我的下一次满月。"
+},
+{
+  id: "dengta",
+  name: "灯塔引力",
+  tag: "稳，别人在你身边会自动放慢",
+  why: "你是那种让人觉得「有你在就没事」的人。朋友出事第一个想到你，因为你不会跟着慌。你话不多，但会把事情一件件捋顺；你不急着表态，可你的判断大多数时候是对的。",
+  who: "你会吸引容易焦虑的人，和正在找方向的人。他们喜欢你身上不晃的底气，喜欢你一句「先睡一觉，明天再说」。最舒服的瞬间，是对方慌得不行，你把水递过去说「坐下，慢慢讲」。",
+  hidden: "你的小怪癖是自己再累，只要有人来求救，就自动切换成「没事，我来」。",
+  share: "我测出来是【灯塔引力】：我话不多，但我可以一直亮着。"
+},
+{
+  id: "huiyin",
+  name: "回音引力",
+  tag: "听得懂弦外之音，人在你这儿不孤单",
+  why: "你有种本事，别人说一半你就懂了。朋友爱找你说事，因为你不急着给建议，先接住情绪。你记得住很小的事：谁在换工作、谁跟家里闹别扭、谁说漏嘴的一句难过。",
+  who: "你会吸引心里事多的人，和那种话不敢往外说的人。他们在你面前会不知不觉说多，说完还觉得轻松。最舒服的瞬间，是你什么都没问，只说了句「我在」。",
+  hidden: "你的小怪癖是自己难过的时候，反而去问别人「你还好吗」。",
+  share: "我测出来是【回音引力】：我不一定帮你解决，但你说的话我都听得见。"
+},
+{
+  id: "yanhuo",
+  name: "烟火引力",
+  tag: "你在，气氛就在",
+  why: "你很会「把日子过出声音」。小到一顿饭怎么点、周末去哪、谁过生日，你都能顺手加点花样。你不是刻意搞笑，你是真觉得生活该有点意思。别人跟你待一会儿，心情会自动升两档。",
+  who: "你会吸引被生活磨平的人，和那种需要被带动一下的人。他们喜欢你身上「说走就走」的劲，喜欢你一句「走，去吃那个」。最舒服的瞬间，是本来只想待在家，被你拉出门后反而笑了一整晚。",
+  hidden: "你的小怪癖是朋友圈看着天天热闹，其实你比谁都需要一个能安静待着的人。",
+  share: "我测出来是【烟火引力】：我不是发光体，我是负责点火的那个。"
+},
+{
+  id: "hupo",
+  name: "琥珀引力",
+  tag: "温柔得能把人裹住，但不困住人",
+  why: "你的温柔是有边界的。你愿意照顾人、记得细节、把对方的事当成自己的事；但你不查岗、不追问、不要对方随时汇报。你像琥珀——把重要的人和事好好包住，却不折断。",
+  who: "你会吸引受过伤的人，和那种怕被控制的人。他们第一次发现，原来被关心也可以不用窒息。最舒服的瞬间，是对方做错事，你没指责，只说「下次我们一起」。",
+  hidden: "你的小怪癖是对谁都客气，唯独在最亲的人面前会小声抱怨。",
+  share: "我测出来是【琥珀引力】：我可以把你放心里，但不锁着你。"
+},
+{
+  id: "yefeng",
+  name: "野风引力",
+  tag: "自由、有方向，别人想跟你跑一段",
+  why: "你身上有股不解释的劲。你有自己的想法和节奏，也不太在意别人怎么评价。你不是不合群，你只是不愿意被安排。你偶尔会突然决定去某个地方、辞掉某件事、换一个状态，旁人看着心慌，你心里门儿清。",
+  who: "你会吸引被束缚久了的人，和那种想见识一下别处的人。他们喜欢跟你聊「不敢跟别人说」的念头，因为只有你不劝他们「安稳点」。最舒服的瞬间，是你说「走不走」，对方一咬牙就跟上了。",
+  hidden: "你的小怪癖是嘴上说「我谁都不需要」，出门还是会给某人发一句「到了」。",
+  share: "我测出来是【野风引力】：我不保证停在原地，但我保证路过时是真的。"
+},
+{
+  id: "maoxi",
+  name: "猫系引力",
+  tag: "想亲近时很黏，需要空间时走开",
+  why: "你的亲密是「随时」的，不是「永远」的。高兴了能抱着人聊到半夜，电量耗尽就消失一整天。你不是嫌弃谁，只是需要回自己的洞里充个电。你的好是有条件的，像猫只对信任的人翻肚皮。",
+  who: "你会吸引懂分寸的人，和那种有点征服欲的人。他们喜欢你身上「抓不太住」的感觉，喜欢被你选中的时刻。最舒服的瞬间，是你主动把头靠过去，什么都没说。",
+  hidden: "你的小怪癖是嘴上说「你忙你的」，心里在数对方多久才回消息。",
+  share: "我测出来是【猫系引力】：我不黏人，但我黏你的时候，你别躲。"
+},
+{
+  id: "shenyediantai",
+  name: "深夜电台引力",
+  tag: "话不多、声音稳，让人想把秘密讲给你",
+  why: "你像深夜的电台，不吵，但一直在。别人跟你说话会不自觉放松，因为你不抢话、不评判，偶尔一句「我懂」正好落在心上。你的表达不密集但很准，你不是不会说，是觉得没必要说那么多。",
+  who: "你会吸引失眠的人，和心里有故事的人。他们喜欢你身上「不催你」的松弛，喜欢在你这儿可以不用装作没事。最舒服的瞬间，是凌晨两点，两个人都不说话，但谁都没挂电话。",
+  hidden: "你的小怪癖是白天看起来最没事的人，晚上是那个需要被抱住的。",
+  share: "我测出来是【深夜电台引力】：睡不着的时候，可以来找我聊。"
+}];
+
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var DIMS = ['H', 'C', 'I', 'E'];
+  var STORE = 'love-attract-quiz-v1';
+  var TOTAL = QUESTIONS.length;
+
+  var state = { answers: new Array(TOTAL).fill(-1), idx: 0 };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var views = { home: $('home'), quiz: $('quiz'), finish: $('finish'), result: $('result') };
+
+  function show(name) {
+    Object.keys(views).forEach(function (k) {
+      views[k].classList.toggle('active', k === name);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- 进度存取 ---------- */
+  function save() {
+    try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {}
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE);
+      if (!raw) return;
+      var obj = JSON.parse(raw);
+      if (obj && Array.isArray(obj.answers) && obj.answers.length === TOTAL) {
+        state.answers = obj.answers;
+        state.idx = Math.max(0, Math.min(TOTAL - 1, obj.idx | 0));
+      }
+    } catch (e) {}
+  }
+  function reset() {
+    state.answers = new Array(TOTAL).fill(-1);
+    state.idx = 0;
+    try { localStorage.removeItem(STORE); } catch (e) {}
+  }
+
+  /* ---------- 题目与选项 ----------
+     数据里每题 4 个选项按 H/C/I/E 顺序写。
+     显示顺序随题号轮转（offset = i % 4），避免「总点第一个」把结果带偏。
+     选中项：主维 +3；次维（稳定 S / 好奇 Q）按题号轮转 +1。 */
+  var qWrap = $('qWrap'), qText = $('qText'), opts = $('opts'),
+      qCount = $('qCount'), barFill = $('barFill');
+
+  function subDim(i, d) {
+    // 数据下标 0/1 → 稳定 S，2/3 → 好奇 Q；每题固定 2 个 S、2 个 Q
+    return (d < 2) ? 'S' : 'Q';
+  }
+
+  function renderQuestion(animate) {
+    var i = state.idx;
+    var q = QUESTIONS[i];
+    var answered = state.answers.filter(function (v) { return v > -1; }).length;
+
+    qText.textContent = q[0];
+    qCount.textContent = '第 ' + (i + 1) + ' / ' + TOTAL + ' 题';
+    barFill.style.width = (answered / TOTAL * 100) + '%';
+
+    opts.innerHTML = '';
+    var off = i % 4;
+    for (var k = 0; k < 4; k++) {
+      (function (k) {
+        var d = (k + off) % 4; // 显示位置 k 对应的数据下标
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'opt';
+        b.textContent = q[d + 1];
+        b.setAttribute('aria-pressed', state.answers[i] === d ? 'true' : 'false');
+        b.addEventListener('click', function () { pick(i, k); });
+        opts.appendChild(b);
+      })(k);
+    }
+
+    if (animate) {
+      qWrap.classList.remove('enter');
+      void qWrap.offsetWidth;
+      qWrap.classList.add('enter');
+    }
+  }
+
+  function pick(i, k) {
+    var off = i % 4;
+    var d = (k + off) % 4; // 存进答案的是数据下标
+    state.answers[i] = d;
+    save();
+
+    var cur = opts.children[k];
+    if (cur) { cur.setAttribute('aria-pressed', 'true'); }
+
+    var answered = state.answers.filter(function (v) { return v > -1; }).length;
+    barFill.style.width = (answered / TOTAL * 100) + '%';
+
+    if (i < TOTAL - 1) {
+      setTimeout(function () {
+        state.idx = i + 1;
+        save();
+        renderQuestion(true);
+      }, 300);
+    } else {
+      setTimeout(showFinish, 320);
+    }
+  }
+
+  /* ---------- 六维指数 ---------- */
+  var AXES = [
+    { key: 'H', label: '热度', max: 30 },
+    { key: 'C', label: '亲密', max: 30 },
+    { key: 'I', label: '独立', max: 30 },
+    { key: 'E', label: '表达', max: 30 },
+    { key: 'S', label: '稳定', max: 40 },
+    { key: 'Q', label: '好奇', max: 40 }
+  ];
+
+  function scoreAll() {
+    var s = { H: 0, C: 0, I: 0, E: 0, S: 0, Q: 0 };
+    for (var i = 0; i < TOTAL; i++) {
+      var d = state.answers[i];
+      if (d < 0) d = 0;
+      s[DIMS[d]] += 3;
+      s[subDim(i, d)] += 1;
+    }
+    return s;
+  }
+
+  function radarSVG(values) {
+    var S = 340, cx = S / 2, cy = S / 2 + 4, R = 106;
+    var n = 6;
+    function pt(idx, ratio) {
+      var a = -Math.PI / 2 + idx * Math.PI / 3;
+      return [cx + Math.cos(a) * R * ratio, cy + Math.sin(a) * R * ratio];
+    }
+    var out = '<svg viewBox="0 0 ' + S + ' ' + S + '" role="img" aria-label="六维引力指数图">';
+
+    // 网格
+    [0.25, 0.5, 0.75, 1].forEach(function (r) {
+      var pts = [];
+      for (var i = 0; i < n; i++) { var p = pt(i, r); pts.push(p[0].toFixed(1) + ',' + p[1].toFixed(1)); }
+      out += '<polygon points="' + pts.join(' ') + '" fill="none" stroke="#F3DCE3" stroke-width="' + (r === 1 ? 1.6 : 1) + '"/>';
+    });
+    // 轴线
+    for (var i = 0; i < n; i++) {
+      var p = pt(i, 1);
+      out += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0].toFixed(1) + '" y2="' + p[1].toFixed(1) + '" stroke="#F7E7EC" stroke-width="1"/>';
+    }
+    // 数据多边形与顶点先放空壳，由 drawRadar() 在动画里逐步填满
+    out += '<polygon id="radarData" points="" fill="rgba(212,105,127,0.22)" stroke="#D4697F" stroke-width="2" stroke-linejoin="round"/>';
+    out += '<g id="radarDots"></g>';
+    // 轴标签 + 数值
+    for (var t = 0; t < n; t++) {
+      var lp = pt(t, 1.24);
+      var anchor = 'middle';
+      if (lp[0] > cx + 8) anchor = 'start';
+      else if (lp[0] < cx - 8) anchor = 'end';
+      out += '<text x="' + lp[0].toFixed(1) + '" y="' + (lp[1] - 2).toFixed(1) + '" text-anchor="' + anchor +
+        '" font-size="12" fill="#8A6B78">' + AXES[t].label + '</text>';
+      out += '<text x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 13).toFixed(1) + '" text-anchor="' + anchor +
+        '" font-size="11.5" font-weight="700" fill="#B7485F" data-num="' + t + '">0</text>';
+    }
+    out += '</svg>';
+    return out;
+  }
+
+  /* ---------- 雷达图展开动画 ---------- */
+  var RG = { cx: 170, cy: 174, R: 106 };
+
+  function radarPoint(idx, ratio) {
+    var a = -Math.PI / 2 + idx * Math.PI / 3;
+    return [RG.cx + Math.cos(a) * RG.R * ratio, RG.cy + Math.sin(a) * RG.R * ratio];
+  }
+
+  function drawRadar(values, ratio) {
+    var poly = document.getElementById('radarData');
+    var dots = document.getElementById('radarDots');
+    if (!poly || !dots) return;
+
+    var pts = [];
+    for (var i = 0; i < 6; i++) {
+      var r = Math.max(0.015, Math.min(1, values[i] / 100)) * ratio;
+      var p = radarPoint(i, r);
+      pts.push(p[0].toFixed(1) + ',' + p[1].toFixed(1));
+    }
+    poly.setAttribute('points', pts.join(' '));
+
+    var dh = '';
+    for (var j = 0; j < 6; j++) {
+      var r2 = Math.max(0.015, Math.min(1, values[j] / 100)) * ratio;
+      var v = radarPoint(j, r2);
+      dh += '<circle cx="' + v[0].toFixed(1) + '" cy="' + v[1].toFixed(1) +
+        '" r="' + (3.6 * Math.min(1, ratio * 1.4)).toFixed(2) + '" fill="#D4697F"/>';
+    }
+    dots.innerHTML = dh;
+
+    for (var k = 0; k < 6; k++) {
+      var el = document.querySelector('[data-num="' + k + '"]');
+      if (el) el.textContent = Math.round(values[k] * ratio);
+    }
+  }
+
+  function animateRadar(values) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { drawRadar(values, 1); return; }
+    var start = performance.now(), dur = 950;
+    function step(now) {
+      var t = Math.min(1, (now - start) / dur);
+      var e = 1 - Math.pow(1 - t, 3);
+      drawRadar(values, e);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- 匹配 ---------- */
+  var TYPE_MAP = {
+    HC: 'huoguo',      HI: 'yuexiang', HE: 'yanhuo',
+    CH: 'hupo',        CI: 'dengta',   CE: 'huiyin',
+    IH: 'yefeng',      IC: 'maoxi',    IE: 'yanxi',
+    EH: 'bingqishui',  EC: 'shenyediantai', EI: 'jiushudian'
+  };
+
+  function byId(id) {
+    for (var i = 0; i < RESULTS.length; i++) {
+      if (RESULTS[i].id === id) return RESULTS[i];
+    }
+    return null;
+  }
+
+  var pending = null;
+
+  function compute() {
+    var s = scoreAll();
+
+    var order = DIMS.map(function (d) { return { d: d, v: s[d] }; });
+    order.sort(function (a, b) {
+      return (b.v - a.v) || (DIMS.indexOf(a.d) - DIMS.indexOf(b.d));
+    });
+
+    var best = byId(TYPE_MAP[order[0].d + order[1].d]);
+    var shadow = null;
+    if (s[order[2].d] >= s[order[1].d] - 2) {
+      shadow = byId(TYPE_MAP[order[0].d + order[2].d]);
+    }
+
+    var values = AXES.map(function (ax) {
+      return Math.max(0, Math.min(100, s[ax.key] / ax.max * 100));
+    });
+    return { best: best, shadow: shadow, values: values };
+  }
+
+  /* 答完题先停在揭晓页，点了按钮才出结果（仪式感） */
+  function showFinish() {
+    pending = compute();
+    show('finish');
+  }
+
+  /* ---------- 结果渲染 ---------- */
+  function showResult(r, shadow, values) {
+    $('rName').textContent = r.name;
+    $('rTag').textContent = r.tag;
+    $('rWhy').textContent = r.why;
+    $('rWho').textContent = r.who;
+    $('rHidden').textContent = r.hidden;
+    $('rShare').textContent = r.share;
+
+    var shadowEl = $('rShadow');
+    if (shadow) {
+      shadowEl.textContent = '你身上还有一点「' + shadow.name.replace('引力', '') + '引力」的影子，只是没它那么明显。';
+      shadowEl.hidden = false;
+    } else {
+      shadowEl.hidden = true;
+    }
+
+    if (values && values.length === 6) {
+      $('radar').innerHTML = radarSVG(values);
+      drawRadar(values, 0);
+      animateRadar(values);
+    }
+    show('result');
+  }
+
+  /* ---------- 复制 ---------- */
+  function copyShare() {
+    var text = $('rShare').textContent;
+    var btn = $('copyBtn');
+    var done = function () {
+      btn.textContent = '已复制，去发吧 ♡';
+      setTimeout(function () { btn.textContent = '复制分享句'; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  }
+
+  /* ---------- 事件绑定 ---------- */
+  $('startBtn').addEventListener('click', function () {
+    reset();
+    show('quiz');
+    state.idx = 0;
+    renderQuestion(true);
+  });
+
+  $('backBtn').addEventListener('click', function () {
+    if (state.idx > 0) {
+      state.idx -= 1;
+      save();
+      renderQuestion(true);
+    }
+  });
+
+  $('copyBtn').addEventListener('click', copyShare);
+
+  /* 揭晓按钮：点了才出结果 */
+  if ($('revealBtn')) {
+    $('revealBtn').addEventListener('click', function () {
+      if (!pending) pending = compute();
+      var btn = $('revealBtn');
+      btn.textContent = '正在揭晓…';
+      setTimeout(function () {
+        showResult(pending.best, pending.shadow, pending.values);
+      }, 280);
+    });
+  }
+
+  $('againBtn').addEventListener('click', function () {
+    reset();
+    var rb = $('revealBtn');
+    if (rb) rb.textContent = '点击查看你吸引的恋人';
+    show('home');
+  });
+
+  /* ---------- 启动 ---------- */
+  // 调试参数：?demo=huoguo 直接展示某个结果（验收用，普通用户不会碰到）
+  var demo = new URLSearchParams(location.search).get('demo');
+  if (demo) {
+    var hit = RESULTS.filter(function (r) { return r.id === demo; })[0];
+    if (hit) {
+      showResult(hit, null, [82, 64, 38, 58, 46, 72]);
+      return;
+    }
+  }
+
+  load();
+  var answered = state.answers.filter(function (v) { return v > -1; }).length;
+  if (answered > 0 && answered < TOTAL) {
+    show('quiz');
+    renderQuestion(false);
+  } else if (answered === TOTAL) {
+    pending = compute();
+    showResult(pending.best, pending.shadow, pending.values);
+  } else {
+    show('home');
+  }
+})();
+</script>
+</body>
+</html>
